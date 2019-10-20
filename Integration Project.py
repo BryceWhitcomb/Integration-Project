@@ -8,7 +8,7 @@ initialHealth = int(10)
 def playerHealth(initialHealth, takenDamage):
     finalHealth = initialHealth - takenDamage
     if finalHealth <= 0:
-        return -5
+        return "Game Over"
     else:
         return finalHealth
 
@@ -25,7 +25,7 @@ print('Welcome to "Text Based Game!" '
 
 
 count = 0
-while fight() != -5:
+while fight() != "Game Over":
     count = count + 1
 print("You survived", count, "time(s)")
 
