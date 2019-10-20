@@ -27,5 +27,5 @@ print('Welcome to "Text Based Game!" '
 count = 0
 while fight() != "Game Over":
     count = count + 1
-print("You survived", count, "time(s)")
+    print("You survived", count, "time(s)")
 
