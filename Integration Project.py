@@ -1,5 +1,4 @@
-# Bryce Whitcomb
-# Integration Project: Text Based Game
+__Author__: Bryce Whitcomb
 
 # Initial Health
 initialHealth = int(10)
