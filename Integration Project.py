@@ -1,30 +1,55 @@
-__Author__: Bryce Whitcomb
+__author__ = "Bryce Whitcomb"
+# Text Based Game
 
 # Initial Health
 initialHealth = int(10)
 
+
 # Player Health
 def playerHealth(initialHealth, takenDamage):
-    finalHealth = initialHealth - takenDamage
-    if finalHealth <= 0:
-        return "Game Over"
-    else:
-        return finalHealth
+    initialHealth = initialHealth - takenDamage
+    return initialHealth
+
 
 # Fight
 import random
-randNum = random.randint(1, 10)
+
+
 def fight():
-    print(playerHealth(initialHealth, randNum))
+    randomNum = int(random.randint(1, 10))
+    if randomNum != 10:
+        print("Remaining health is", int(playerHealth(initialHealth, randomNum)))
+    else:
+        return 0
+
 
 # Game Introduction
 print('Welcome to "Text Based Game!" '
       '\nYou have 10 health, and a chance to take between 1 and 10 damage'
       '\nHow many times can you not get a "Game Over"?')
 
-
+# Main
+print("Enter 'y' to begin or any other key to stop.")
+begin = input()
+if begin == "y":
+    play = True
+elif begin == "Y":
+    play = True
+else:
+    play = False
 count = 0
-while fight() != "Game Over":
-    count = count + 1
+while play is True:
+    if fight() == 0:
+        play = False
+        print("Game Over.")
+    else:
+        count = count + 1
+        print("You survived! Enter 'y' to play again, or any other key to stop.")
+        playAgain = input()
+        if playAgain == "y":
+            play = True
+        elif playAgain == "Y":
+            play = True
+        else:
+            play = False
 print("You survived", count, "time(s)")
-
